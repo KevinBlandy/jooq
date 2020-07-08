@@ -4,12 +4,22 @@
 package io.springboot.jooq.generated;
 
 
-import io.springboot.jooq.generated.tables.Author;
-import io.springboot.jooq.generated.tables.records.AuthorRecord;
+import io.springboot.jooq.generated.tables.Address;
+import io.springboot.jooq.generated.tables.Role;
+import io.springboot.jooq.generated.tables.User;
+import io.springboot.jooq.generated.tables.UserRole;
+import io.springboot.jooq.generated.tables.UserSeting;
+import io.springboot.jooq.generated.tables.records.AddressRecord;
+import io.springboot.jooq.generated.tables.records.RoleRecord;
+import io.springboot.jooq.generated.tables.records.UserRecord;
+import io.springboot.jooq.generated.tables.records.UserRoleRecord;
+import io.springboot.jooq.generated.tables.records.UserSetingRecord;
 
+import org.jooq.Identity;
 import org.jooq.TableField;
 import org.jooq.UniqueKey;
 import org.jooq.impl.Internal;
+import org.jooq.types.UInteger;
 
 
 /**
@@ -23,12 +33,21 @@ public class Keys {
     // IDENTITY definitions
     // -------------------------------------------------------------------------
 
+    public static final Identity<AddressRecord, UInteger> IDENTITY_ADDRESS = Identities0.IDENTITY_ADDRESS;
+    public static final Identity<RoleRecord, UInteger> IDENTITY_ROLE = Identities0.IDENTITY_ROLE;
+    public static final Identity<UserRecord, UInteger> IDENTITY_USER = Identities0.IDENTITY_USER;
+    public static final Identity<UserSetingRecord, UInteger> IDENTITY_USER_SETING = Identities0.IDENTITY_USER_SETING;
 
     // -------------------------------------------------------------------------
     // UNIQUE and PRIMARY KEY definitions
     // -------------------------------------------------------------------------
 
-    public static final UniqueKey<AuthorRecord> KEY_AUTHOR_PRIMARY = UniqueKeys0.KEY_AUTHOR_PRIMARY;
+    public static final UniqueKey<AddressRecord> KEY_ADDRESS_PRIMARY = UniqueKeys0.KEY_ADDRESS_PRIMARY;
+    public static final UniqueKey<RoleRecord> KEY_ROLE_PRIMARY = UniqueKeys0.KEY_ROLE_PRIMARY;
+    public static final UniqueKey<UserRecord> KEY_USER_PRIMARY = UniqueKeys0.KEY_USER_PRIMARY;
+    public static final UniqueKey<UserRoleRecord> KEY_USER_ROLE_PRIMARY = UniqueKeys0.KEY_USER_ROLE_PRIMARY;
+    public static final UniqueKey<UserSetingRecord> KEY_USER_SETING_PRIMARY = UniqueKeys0.KEY_USER_SETING_PRIMARY;
+    public static final UniqueKey<UserSetingRecord> KEY_USER_SETING_UK_RDCHRAX5RP1M1Y4KPAX285KRW = UniqueKeys0.KEY_USER_SETING_UK_RDCHRAX5RP1M1Y4KPAX285KRW;
 
     // -------------------------------------------------------------------------
     // FOREIGN KEY definitions
@@ -39,7 +58,19 @@ public class Keys {
     // [#1459] distribute members to avoid static initialisers > 64kb
     // -------------------------------------------------------------------------
 
+    private static class Identities0 {
+        public static Identity<AddressRecord, UInteger> IDENTITY_ADDRESS = Internal.createIdentity(Address.ADDRESS, Address.ADDRESS.ID);
+        public static Identity<RoleRecord, UInteger> IDENTITY_ROLE = Internal.createIdentity(Role.ROLE, Role.ROLE.ID);
+        public static Identity<UserRecord, UInteger> IDENTITY_USER = Internal.createIdentity(User.USER, User.USER.ID);
+        public static Identity<UserSetingRecord, UInteger> IDENTITY_USER_SETING = Internal.createIdentity(UserSeting.USER_SETING, UserSeting.USER_SETING.ID);
+    }
+
     private static class UniqueKeys0 {
-        public static final UniqueKey<AuthorRecord> KEY_AUTHOR_PRIMARY = Internal.createUniqueKey(Author.AUTHOR, "KEY_author_PRIMARY", new TableField[] { Author.AUTHOR.ID }, true);
+        public static final UniqueKey<AddressRecord> KEY_ADDRESS_PRIMARY = Internal.createUniqueKey(Address.ADDRESS, "KEY_address_PRIMARY", new TableField[] { Address.ADDRESS.ID }, true);
+        public static final UniqueKey<RoleRecord> KEY_ROLE_PRIMARY = Internal.createUniqueKey(Role.ROLE, "KEY_role_PRIMARY", new TableField[] { Role.ROLE.ID }, true);
+        public static final UniqueKey<UserRecord> KEY_USER_PRIMARY = Internal.createUniqueKey(User.USER, "KEY_user_PRIMARY", new TableField[] { User.USER.ID }, true);
+        public static final UniqueKey<UserRoleRecord> KEY_USER_ROLE_PRIMARY = Internal.createUniqueKey(UserRole.USER_ROLE, "KEY_user_role_PRIMARY", new TableField[] { UserRole.USER_ROLE.ROLE_ID, UserRole.USER_ROLE.USER_ID }, true);
+        public static final UniqueKey<UserSetingRecord> KEY_USER_SETING_PRIMARY = Internal.createUniqueKey(UserSeting.USER_SETING, "KEY_user_seting_PRIMARY", new TableField[] { UserSeting.USER_SETING.ID }, true);
+        public static final UniqueKey<UserSetingRecord> KEY_USER_SETING_UK_RDCHRAX5RP1M1Y4KPAX285KRW = Internal.createUniqueKey(UserSeting.USER_SETING, "KEY_user_seting_UK_rdchrax5rp1m1y4kpax285krw", new TableField[] { UserSeting.USER_SETING.USER_ID }, true);
     }
 }

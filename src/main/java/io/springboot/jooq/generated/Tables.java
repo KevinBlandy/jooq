@@ -4,7 +4,11 @@
 package io.springboot.jooq.generated;
 
 
-import io.springboot.jooq.generated.tables.Author;
+import io.springboot.jooq.generated.tables.Address;
+import io.springboot.jooq.generated.tables.Role;
+import io.springboot.jooq.generated.tables.User;
+import io.springboot.jooq.generated.tables.UserRole;
+import io.springboot.jooq.generated.tables.UserSeting;
 
 
 /**
@@ -14,7 +18,27 @@ import io.springboot.jooq.generated.tables.Author;
 public class Tables {
 
     /**
-     * The table <code>jooq.author</code>.
+     * 地址
      */
-    public static final Author AUTHOR = Author.AUTHOR;
+    public static final Address ADDRESS = Address.ADDRESS;
+
+    /**
+     * 角色
+     */
+    public static final Role ROLE = Role.ROLE;
+
+    /**
+     * 用户
+     */
+    public static final User USER = User.USER;
+
+    /**
+     * 用户角色关联
+     */
+    public static final UserRole USER_ROLE = UserRole.USER_ROLE;
+
+    /**
+     * 用户设置关联
+     */
+    public static final UserSeting USER_SETING = UserSeting.USER_SETING;
 }

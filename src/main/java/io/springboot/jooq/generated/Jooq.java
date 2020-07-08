@@ -4,7 +4,11 @@
 package io.springboot.jooq.generated;
 
 
-import io.springboot.jooq.generated.tables.Author;
+import io.springboot.jooq.generated.tables.Address;
+import io.springboot.jooq.generated.tables.Role;
+import io.springboot.jooq.generated.tables.User;
+import io.springboot.jooq.generated.tables.UserRole;
+import io.springboot.jooq.generated.tables.UserSeting;
 
 import java.util.Arrays;
 import java.util.List;
@@ -20,7 +24,7 @@ import org.jooq.impl.SchemaImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Jooq extends SchemaImpl {
 
-    private static final long serialVersionUID = -1462121990;
+    private static final long serialVersionUID = -974414155;
 
     /**
      * The reference instance of <code>jooq</code>
@@ -28,9 +32,29 @@ public class Jooq extends SchemaImpl {
     public static final Jooq JOOQ = new Jooq();
 
     /**
-     * The table <code>jooq.author</code>.
+     * 地址
      */
-    public final Author AUTHOR = Author.AUTHOR;
+    public final Address ADDRESS = Address.ADDRESS;
+
+    /**
+     * 角色
+     */
+    public final Role ROLE = Role.ROLE;
+
+    /**
+     * 用户
+     */
+    public final User USER = User.USER;
+
+    /**
+     * 用户角色关联
+     */
+    public final UserRole USER_ROLE = UserRole.USER_ROLE;
+
+    /**
+     * 用户设置关联
+     */
+    public final UserSeting USER_SETING = UserSeting.USER_SETING;
 
     /**
      * No further instances allowed
@@ -48,6 +72,10 @@ public class Jooq extends SchemaImpl {
     @Override
     public final List<Table<?>> getTables() {
         return Arrays.<Table<?>>asList(
-            Author.AUTHOR);
+            Address.ADDRESS,
+            Role.ROLE,
+            User.USER,
+            UserRole.USER_ROLE,
+            UserSeting.USER_SETING);
     }
 }
